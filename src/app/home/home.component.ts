@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { SearchService } from '../service/search.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  loanNumber : number;
+  user : any;
 
-  ngOnInit(): void {
+  constructor(private service : SearchService) { }
+
+  ngOnInit() {
   }
+
+  public findByLoanNumber(){
+    let response = this.service.getLoanDetails(this.loanNumber);
+    response.subscribe(data => this.user = data);
+  }
+
 
 }
