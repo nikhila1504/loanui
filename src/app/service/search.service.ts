@@ -13,6 +13,13 @@ export class SearchService {
    }
   
     getLoanDetails(loanNumber: number): Observable<any> {
-      return this.http.get(`${this.baseUrl}/get/${loanNumber}`);
+      return this.http.get(`${this.baseUrl}/num/${loanNumber}`);
     }
+    getByFname(firstName: string): Observable<any> {
+      return this.http.get(`${this.baseUrl}/name/${firstName}`);
+    }
+    getByLname(lastName: string): Observable<any> {
+      return this.http.get(`${this.baseUrl}/get/${lastName}`);
+    }
+
   }

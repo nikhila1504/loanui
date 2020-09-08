@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
-import { HttpInterceptorService } from './service/http-interceptor.service';
+// import { HttpInterceptorService } from './service/http-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -21,11 +21,11 @@ import { HttpInterceptorService } from './service/http-interceptor.service';
 
   ],
   providers: [
-    {
-    provide: HTTP_INTERCEPTORS,
-    useClass: HttpInterceptorService,
-    multi: true
-    }
+    // {
+    // provide: HTTP_INTERCEPTORS,
+    // useClass: HttpInterceptorService,
+    // multi: true
+    // }
 
   ],
   bootstrap: [AppComponent]

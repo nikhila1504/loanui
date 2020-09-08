@@ -8,6 +8,8 @@ import { SearchService } from '../service/search.service';
 export class HomeComponent implements OnInit {
 
   loanNumber : number;
+  firstName :string;
+  lastName:string;
   user : any;
 
   constructor(private service : SearchService) { }
@@ -19,6 +21,15 @@ export class HomeComponent implements OnInit {
     let response = this.service.getLoanDetails(this.loanNumber);
     response.subscribe(data => this.user = data);
   }
+  // public findByFname(){
+  //   let response = this.service.getByFname(this.firstName);
+  //   response.subscribe(data => this.user = data);
+  // }
+  // public findByLname(){
+  //   let response = this.service.getByLname(this.lastName);
+  //   response.subscribe(data => this.user = data);
+  // }
+
 
 
 }
