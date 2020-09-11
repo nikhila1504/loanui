@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LoginComponent } from './login.component';
-import {Component, DebugElement} from "@angular/core";
+import { DebugElement} from "@angular/core";
 import {By} from "@angular/platform-browser";
 
 describe('LoginComponent', () => {
@@ -19,23 +19,7 @@ describe('LoginComponent', () => {
     password=fixture.debugElement.query(By.css('input=id[password]'))
 
   }));
-  // it('entering value into inputs',()=>{
-  //   let users:any;
-  //   userName.nativeElement.value="nikhila";
-  //   password.nativeElement.value="nikhila";
-  //   expect(component.form.valid).toBeTruthy();
-
-  // });
-  // it('entering value into inputs',()=>{
-  //   let users:any;
-  //   userName.nativeElement.value="";
-  //   password.nativeElement.value="";
-  //   expect(component.form.valid).toBeFalsy();
-
-  // });
   
-
-
   beforeEach(() => {
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
@@ -46,10 +30,5 @@ describe('LoginComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it(`should have 'Loan Management' as title`, async(() => {
-    fixture = TestBed.createComponent(LoginComponent);
-    component = fixture.debugElement.componentInstance;
-    expect(component.title).toEqual('Loan Management');
-  }));
 
 });
