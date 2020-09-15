@@ -11,24 +11,27 @@ import { AuthenticationService } from '../service/authentication.service';
 export class LoginComponent implements OnInit {
   user: Users = new Users();
   errorMessage:'Invalid user';
+  success:''
   invalidlogin= false;
   validlogin=false;
   constructor(private authService: AuthenticationService, private router: Router) { }
-
-
-
   ngOnInit() {
   }
   login() {
+    if(this.validlogin=true){
     this.authService.authenticate(this.user, (e) => {
-      this.invalidlogin=false;
-      this.validlogin=true;
-      this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('/home');
       let resp: any;
       resp = e.principal;
       if (resp) {
+        this.validlogin=true;
         sessionStorage.setItem('currentUser', JSON.stringify(resp));
       }
     });
+  
+  }
+  // else (this.invalidlogin=true){
+  // }
+
   }
 }
